@@ -14,6 +14,7 @@ tools:
 safe-outputs:
   add-comment:
     max: 1
+    discussions: false
   missing-tool:
     create-issue: true
 ---
@@ -62,10 +63,9 @@ Consider these factors when determining complexity:
 
 ## Process
 
-1. **Read the issue**: Use GitHub tools to get the full issue content, title, and any existing labels
+1. **Read the issue**: Use the `issue_read` GitHub tool to get the full issue content, title, and any existing labels
 2. **Analyze complexity**: Evaluate based on the guidelines above
-3. **Apply label**: Add exactly ONE of these labels: `trivial`, `medium`, or `complex`
-4. **Add helpful comment**: Post a brief comment explaining your classification and any recommendations
+3. **Post classification comment**: Use the `add_comment` safe output to post your complexity classification and recommend which label should be applied (trivial/medium/complex)
 
 ## Comment Format
 
@@ -82,6 +82,7 @@ Keep your comment concise and helpful:
 ## Safe Outputs
 
 When you complete your analysis:
-- Use `add-comment` to post your classification and explanation
-- The comment should include instructions to apply the appropriate label (trivial/medium/complex)
+- Use the `add_comment` safe output tool to post your classification and explanation on the issue
+- The comment should recommend the appropriate label (trivial/medium/complex) for a maintainer to apply
 - If the issue already has a complexity label and hasn't changed significantly, call the `noop` safe output to indicate no action was needed
+- You MUST call exactly one safe output tool (`add_comment` or `noop`) before finishing
