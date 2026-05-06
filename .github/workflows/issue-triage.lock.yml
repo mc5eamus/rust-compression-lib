@@ -23,7 +23,7 @@
 #
 # Automatically classify and label issues as trivial, medium, or complex based on their content
 #
-# gh-aw-metadata: {"schema_version":"v2","frontmatter_hash":"b1b5242a798494e930404cbd84904d7597c74ac27bf5bc057e0f87da553c29af","compiler_version":"v0.58.0","strict":true}
+# gh-aw-metadata: {"schema_version":"v2","frontmatter_hash":"9bd4d12026694f05305d59e1a86bd63ab84f0a08fdbe5a3be3da6608024168ad","compiler_version":"v0.58.0","strict":true}
 
 name: "Issue Triage Agent"
 "on":
@@ -940,7 +940,6 @@ jobs:
     runs-on: ubuntu-slim
     permissions:
       contents: read
-      discussions: write
       issues: write
       pull-requests: write
     concurrency:
@@ -1043,7 +1042,6 @@ jobs:
     runs-on: ubuntu-slim
     permissions:
       contents: read
-      discussions: write
       issues: write
       pull-requests: write
     timeout-minutes: 15
