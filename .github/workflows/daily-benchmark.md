@@ -6,12 +6,16 @@ on:
 permissions:
   contents: read
   actions: read
+  issues: read
+  pull-requests: read
 engine: copilot
 strict: true
 timeout-minutes: 30
 network:
   allowed: [defaults, rust]
 tools:
+  github:
+    toolsets: [default]
   bash: ["*"]
 safe-outputs:
   create-issue:

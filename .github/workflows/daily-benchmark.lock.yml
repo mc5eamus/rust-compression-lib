@@ -23,7 +23,7 @@
 #
 # Runs Rust compression benchmarks daily and reports results as a GitHub issue.
 #
-# gh-aw-metadata: {"schema_version":"v2","frontmatter_hash":"ae3b600802383796053bb19c290b09c6c0a347fd5081af7e627983e4a5518145","compiler_version":"v0.58.0","strict":true}
+# gh-aw-metadata: {"schema_version":"v2","frontmatter_hash":"d1d10fb493b4b4bdd82f696855c9c6becd8e7051df045d444a3824b2d1a80b74","compiler_version":"v0.58.0","strict":true}
 
 name: "Daily Benchmark Report"
 "on":
@@ -51,7 +51,7 @@ jobs:
       secret_verification_result: ${{ steps.validate-secret.outputs.verification_result }}
     steps:
       - name: Setup Scripts
-        uses: github/gh-aw/actions/setup@v0.58.0
+        uses: github/gh-aw/actions/setup@cb7966564184443e601bd6135d5fbb534300070e # v0.58.0
         with:
           destination: /opt/gh-aw/actions
       - name: Generate agentic run info
@@ -232,6 +232,8 @@ jobs:
     permissions:
       actions: read
       contents: read
+      issues: read
+      pull-requests: read
     concurrency:
       group: "gh-aw-copilot-${{ github.workflow }}"
     env:
@@ -255,7 +257,7 @@ jobs:
       output_types: ${{ steps.collect_output.outputs.output_types }}
     steps:
       - name: Setup Scripts
-        uses: github/gh-aw/actions/setup@v0.58.0
+        uses: github/gh-aw/actions/setup@cb7966564184443e601bd6135d5fbb534300070e # v0.58.0
         with:
           destination: /opt/gh-aw/actions
       - name: Checkout repository
@@ -966,7 +968,7 @@ jobs:
       total_count: ${{ steps.missing_tool.outputs.total_count }}
     steps:
       - name: Setup Scripts
-        uses: github/gh-aw/actions/setup@v0.58.0
+        uses: github/gh-aw/actions/setup@cb7966564184443e601bd6135d5fbb534300070e # v0.58.0
         with:
           destination: /opt/gh-aw/actions
       - name: Download agent output artifact
@@ -1073,7 +1075,7 @@ jobs:
       process_safe_outputs_temporary_id_map: ${{ steps.process_safe_outputs.outputs.temporary_id_map }}
     steps:
       - name: Setup Scripts
-        uses: github/gh-aw/actions/setup@v0.58.0
+        uses: github/gh-aw/actions/setup@cb7966564184443e601bd6135d5fbb534300070e # v0.58.0
         with:
           destination: /opt/gh-aw/actions
       - name: Download agent output artifact
